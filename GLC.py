@@ -8,7 +8,7 @@ def config_bashrc():
 
 def get_zsh_last_command():
 	# TODO	
-	return "echo Example"
+	return "cat main.py"
 
 
 def get_bash_last_command():

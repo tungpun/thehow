@@ -12,6 +12,8 @@
 
 
 import GLC
+import os
+import subprocess as sub
 
 KNOWN_PREFIX = ['git', 'nmap']			# Two examples
 POSTFIX = ['-h', '--help']
@@ -22,30 +24,26 @@ def known_prefix(prefix):
 	return 0 
 
 
-def run(command):
-	# TODO
-	# return stdout
-	return 0
+def run(command):	
+	p = sub.Popen(command,stdout=sub.PIPE,stderr=sub.PIPE, shell=True)
+	output, errors = p.communicate()
+	return output
 
 
 def is_verified(stdout):
-	# TODO
-	return False
+	if 'invalid' in stdout:
+		return False
+	return True
 
 
-def unknown_prefix(prefix):
-	# TODO
-	for postfix in POSTFIX:
-		helpcommand = prefix + ' ' + postfix
-		stdout = run(helpcommand)
-		if is_verified(stdout):
-			print stdout
-			return 0
-	print "[+]", "Not found help command for", prefix
-	return 0
+def unknown_prefix(prefix):	
+	os.system(prefix + ' --help')	
+	return 0	
+
+	# print "[+]", "Not found help command for", prefix	
 
 
-if __name__ == '__main__':
+if __name__ == '__main__':			
 	command = GLC.get_last_command()	# echo Example
 	prefix = GLC.get_prefix(command)	# echo	
 	if prefix in KNOWN_PREFIX:
