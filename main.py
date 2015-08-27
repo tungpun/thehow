@@ -1,3 +1,5 @@
+#!/usr/bin/python2.7 
+
 import GLC
 
 KNOWN_PREFIX = ['git', 'nmap']			# Two examples
