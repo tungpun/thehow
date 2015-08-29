@@ -9,6 +9,8 @@
 			       			Help you view help command
 
 ```
+# Requisition
+'Python 2.7'
 
 # Installation
 ```
