@@ -9,16 +9,16 @@
 			       			Help you view help command
 
 ```
-## REQUISITION
+## Requisition
 `Python 2.7`
 
-## INSTALLATION
+## Installation
 ```
 git clone git@github.com:tungpun/thehow.git ~/thehow
 echo 'alias how="python ~/thehow/main.py"' >> ~/.zshrc
 echo 'alias how="python ~/thehow/main.py"' >> ~/.bashrc
 ```
 
-## EXAMPLE
+## Example
 Updating...
 
