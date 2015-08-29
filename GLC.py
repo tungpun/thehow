@@ -66,7 +66,7 @@ def get_prefix(command):
     except Exception, e:
         print e
         raise Exception, "Get prefix: error ! Let me check your last command !"
-    return prefix
+    return prefix.strip()
 
 
 if __name__ == '__main__':
