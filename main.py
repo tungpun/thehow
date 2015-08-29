@@ -15,7 +15,7 @@ import GLC
 import os
 import subprocess as sub
 
-KNOWN_PREFIX = ['cd', 'ls']			# Two examples
+KNOWN_PREFIX = ['cd', 'ls', 'clear']			# Two examples
 POSTFIX = ['-h', '--help']
 
 
