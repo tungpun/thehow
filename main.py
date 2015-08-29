@@ -15,12 +15,12 @@ import GLC
 import os
 import subprocess as sub
 
-KNOWN_PREFIX = ['git', 'nmap']			# Two examples
+KNOWN_PREFIX = ['cd', 'ls']			# Two examples
 POSTFIX = ['-h', '--help']
 
 
 def known_prefix(prefix):
-	# TODO
+	os.system('man ' + prefix)	
 	return 0 
 
 
@@ -44,8 +44,8 @@ def unknown_prefix(prefix):
 
 
 if __name__ == '__main__':			
-	command = GLC.get_last_command()	# echo Example
-	prefix = GLC.get_prefix(command)	# echo	
+	command = GLC.get_last_command()			# echo Example
+	prefix = GLC.get_prefix(command).strip()	# echo		
 	if prefix in KNOWN_PREFIX:
 		known_prefix(prefix)
 	else:
